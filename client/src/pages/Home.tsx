@@ -4,7 +4,7 @@
 import { isValidElement, useEffect, useMemo, useState, type ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowUpRight, Check, Copy, Menu, MoveUpRight, X } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Download, Menu, MoveUpRight, X } from "lucide-react";
 import manuscript from "@/content/gramatica-do-movimento.md?raw";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
 
@@ -12,6 +12,7 @@ const marcaUrl = "/manus-storage/gramatica-movimento-marca_9c9690fc.png";
 const aberturaUrl = "/manus-storage/gramatica-movimento-abertura_477e34a2.png";
 const arestaUrl = "/manus-storage/gramatica-movimento-aresta_859ee0ed.png";
 const fechoUrl = "/manus-storage/gramatica-movimento-fecho_af736ff5.png";
+const bookPdfUrl = "https://raw.githubusercontent.com/0b3st4f3r4/gramatica/main/downloads/gramatica-do-movimento-livro.pdf";
 
 type TocItem = {
   id: string;
@@ -219,6 +220,9 @@ export default function Home() {
             <ReadingMeta />
             <div className="opening-actions">
               <a className="primary-link" href="#resumo">Começar a leitura <ArrowUpRight size={16} /></a>
+              <a className="pdf-link" href={bookPdfUrl} target="_blank" rel="noreferrer">
+                <Download size={15} /> Baixar livro em PDF
+              </a>
               <button className="copy-link" type="button" onClick={copyLink}>
                 {copied ? <Check size={15} /> : <Copy size={15} />}
                 {copied ? "Link copiado" : "Copiar link"}
