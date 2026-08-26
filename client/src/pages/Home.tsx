@@ -8,10 +8,6 @@ import { ArrowUpRight, Check, Copy, Download, Menu, MoveUpRight, X } from "lucid
 import manuscript from "@/content/gramatica-do-movimento.md?raw";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
 
-const marcaUrl = "/manus-storage/gramatica-movimento-marca_9c9690fc.png";
-const aberturaUrl = "/manus-storage/gramatica-movimento-abertura_477e34a2.png";
-const arestaUrl = "/manus-storage/gramatica-movimento-aresta_859ee0ed.png";
-const fechoUrl = "/manus-storage/gramatica-movimento-fecho_af736ff5.png";
 const bookPdfUrl = "https://raw.githubusercontent.com/0b3st4f3r4/gramatica/main/downloads/gramatica-do-movimento-livro.pdf";
 
 type TocItem = {
@@ -19,6 +15,30 @@ type TocItem = {
   label: string;
   level: 2 | 3;
 };
+
+function EditorialMark({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`editorial-mark ${className}`} viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="21" cy="22" r="11" fill="none" stroke="currentColor" strokeWidth="2.6" strokeDasharray="53 17" transform="rotate(-44 21 22)" />
+      <path d="M22 7v18.5c0 3.6 2.9 6.5 6.5 6.5H35" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2.6" />
+      <path d="m29.5 26 6 6-6 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" />
+    </svg>
+  );
+}
+
+function EditorialTrace({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`editorial-trace ${className}`} viewBox="0 0 640 340" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+      <path className="trace-light" d="M355 22c-22 38 9 57 45 64 48 9 95-5 123 24 23 24 7 57-34 76-54 25-80 69-58 110 24 44 113 28 122 98" />
+      <path className="trace-main" d="M236 304c20-77 95-93 111-158 15-58-27-82 19-124 36-33 90-19 113-61" />
+      <path className="trace-faint" d="M438 16c15 34 68 41 84 75 14 28-12 54-43 66m-28 95c38 21 86 25 104 62" />
+      <circle cx="236" cy="304" r="5" className="trace-node" />
+      <circle cx="347" cy="146" r="5" className="trace-node" />
+      <circle cx="479" cy="61" r="5" className="trace-node" />
+      <circle cx="553" cy="230" r="5" className="trace-node" />
+    </svg>
+  );
+}
 
 function slugify(value: string) {
   return value
@@ -157,7 +177,7 @@ export default function Home() {
 
       <header className="mobile-header">
         <a className="mobile-brand" href="#inicio" aria-label="Início de Gramática do Movimento">
-          <img src={marcaUrl} alt="Marca abstrata de fluxo e retorno" />
+          <EditorialMark />
           <span>GRAMÁTICA<br />DO MOVIMENTO</span>
         </a>
         <button
@@ -175,7 +195,7 @@ export default function Home() {
       <aside id="indice-leitura" className={`reading-rail ${menuOpen ? "is-open" : ""}`}>
         <div className="rail-top">
           <a className="wordmark" href="#inicio" onClick={() => setMenuOpen(false)}>
-            <img src={marcaUrl} alt="Marca abstrata de fluxo e retorno" />
+            <EditorialMark />
             <span>GRAMÁTICA<br />DO MOVIMENTO</span>
           </a>
           <div className="rail-edition"><span>EDIÇÃO CRÍTICA</span><strong>2026</strong></div>
@@ -229,11 +249,11 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <img className="opening-image" src={aberturaUrl} alt="Linhas topológicas abstratas em azul-petróleo" />
+          <EditorialTrace className="opening-trace" />
         </section>
 
         <section className="reading-note" aria-label="Nota da edição">
-          <img src={arestaUrl} alt="Trajetória abstrata com pontos de passagem" />
+          <EditorialTrace className="note-trace" />
           <div>
             <span>LEITURA ABERTA</span>
             <p>O índice acompanha a posição de leitura; os diagramas permanecem vivos e redimensionáveis no próprio texto.</p>
@@ -247,7 +267,7 @@ export default function Home() {
         </article>
 
         <footer className="closing" id="fecho">
-          <img src={fechoUrl} alt="Mapa abstrato de pontos e linhas em azul-petróleo" />
+          <EditorialTrace className="closing-trace" />
           <div>
             <span>EDIÇÃO ESTÁTICA</span>
             <p>O texto permanece aberto à revisão; a página preserva sua estrutura, seus diagramas e sua navegabilidade.</p>
