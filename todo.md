@@ -1,0 +1,140 @@
+- [ ] Revisar os itens incluídos no pacote estático.
+- [ ] Gerar o arquivo ZIP excluindo dependências e artefatos temporários.
+- [ ] Validar o conteúdo do ZIP e disponibilizá-lo para download.
+- [ ] Verificar o estado do repositório 0b3st4f3r4/gramatica.
+- [ ] Criar ou atualizar a branch main com o código-fonte estático.
+- [ ] Confirmar o commit e o endereço do repositório remoto.
+- [ ] Adicionar o PDF em formato de livro ao pacote versionado.
+- [ ] Inserir e testar o botão de download na página estática.
+- [ ] Validar o build e enviar a atualização à branch main.
+- [ ] Criar workflow de CI para checagem de tipos e build.
+- [ ] Validar o YAML e a instalação reprodutível com pnpm.
+- [ ] Enviar a configuração de CI para a branch main.
+- [ ] Remover a versão duplicada de pnpm no workflow de CI.
+- [ ] Validar e publicar a correção do workflow na branch main.
+- [ ] Criar workflow de deploy para GitHub Pages.
+- [ ] Validar build e configuração do artefato de Pages.
+- [ ] Enviar o workflow de publicação para a branch main.
+- [ ] Inspecionar a falha do cabeçalho na versão publicada.
+- [ ] Incluir ativos de marca e abertura próprios no build estático.
+- [ ] Validar e publicar a correção do cabeçalho no GitHub Pages.
+- [ ] Reproduzir e identificar o recarregamento dos diagramas Mermaid.
+- [ ] Estabilizar a renderização para evitar remontagens desnecessárias.
+- [ ] Validar e publicar a correção dos diagramas no GitHub Pages.
+- [ ] Mapear padrões de auditoria e validação computacional distribuíveis.
+- [ ] Formular endereçamentos além de IaaS, PaaS e SaaS.
+- [ ] Redigir o caderno de infraestrutura digital para a Gramática do Movimento.
+- [ ] Explicitar a finalidade praxiológica da infraestrutura proposta.
+- [ ] Reescrever as proposições como compromissos operacionais verificáveis.
+- [ ] Revisar o caderno para distinguir efeito pretendido, medido e contestado.
+- [ ] Integrar o laboratório de movimentos verificáveis à página estática.
+- [ ] Implementar decisão local, razão encadeada e atestação exportável no navegador.
+- [ ] Validar os cenários e publicar a atualização do laboratório.
+- [ ] Reposicionar o laboratório no fechamento da página.
+- [ ] Reescrever a apresentação para explicar a experiência em linguagem de chegada.
+- [ ] Validar a hierarquia de leitura e o entendimento inicial do visitante.
+- [x] Criar uma rota dedicada e isolada para o laboratório.
+- [x] Implementar os casos de uso de aceite, recusa e evidência insuficiente.
+- [x] Cobrir os fluxos com cenários BDD e validação executável.
+- [x] Manter o manuscrito estático inalterado e validar as duas rotas.
+- [x] Definir sessão efêmera, sem senha e sem armazenamento persistente de API key.
+- [x] Implementar abertura, atividade local, expiração em vinte minutos, encerramento e descarte em memória.
+- [x] Tornar visíveis os estados de sessão fechada, aberta e expirada, sem registrar segredo na razão ou no atestado.
+- [x] Cobrir a sessão efêmera com cenários BDD e validar tipagem, testes, build e responsividade.
+- [ ] Escolher o provedor e testar se ele aceita chamada direta do navegador.
+- [ ] Implementar a primeira chamada direta com limite de escopo e custo, sem persistir credencial.
+- [ ] Registrar na razão somente os metadados não secretos da chamada, a política e o resultado.
+- [ ] Validar a experiência local antes de qualquer sincronização ou publicação remota.
+- [x] Ocultar a superfície de agente e manter as chamadas externas desativadas.
+- [x] Acrescentar ao laboratório as oportunidades de prova, transformação, endereço, custo, tempo e contestação.
+- [x] Adicionar um acesso editorial ao laboratório na abertura do manuscrito.
+- [x] Validar a leitura das duas rotas após o foco nos meios próximos do bit.
+- [x] Reler integralmente o manuscrito e mapear seus conceitos como operações possíveis do laboratório.
+- [x] Comparar o laboratório atual com as categorias, limites e vocabulário do texto.
+- [x] Elaborar um plano priorizado de novas funções, melhorias e remoções do laboratório.
+- [x] Migrar os acessos internos da rota dedicada de /laboratorio para /lab.
+- [x] Validar a rota /lab e manter a revisão sem publicação remota.
+- [x] Modelar caso local, política e estatuto da derivação sem misturar decisão operacional e conclusão epistêmica.
+- [x] Criar o caderno de caso guiado pelas sete perguntas, com campos de forma, aspecto, hospedeiro, moeda, troca, escala e refluxo.
+- [x] Manter os três exemplos atuais como percursos didáticos preenchidos no novo caderno.
+- [x] Exibir decisão operacional e posto da derivação como resultados distintos.
+- [x] Cobrir criação, ausência de campos, descida de posto e exemplos com cenários BDD.
+- [x] Validar o caderno local e manter agentes, API keys, servidor, conta e publicação remota desativados.
+- [x] Modelar envelope de evidências por metadados e digest, sem reter conteúdo de arquivo depois da sessão.
+- [x] Criar seleção local de arquivo e cálculo de SHA-256 no navegador, com declaração de escopo e privacidade.
+- [x] Exigir mapa de cegueira para moeda por proxy, com fonte, recorte, direção de erro, troca não vista e data prévia.
+- [x] Ajustar o posto da derivação quando proxy, ponto cego e observação separadora estiverem ausentes ou incompletos.
+- [x] Criar reexame datado e catálogo de falhas com os quatro vereditos e eventual perda de posto.
+- [x] Cobrir evidência, ponto cego, reexame e catálogo com cenários BDD e validar o fluxo local.
+- [x] Modelar trajetória como sequência verificável de decisões e reexames, sem reduzir posições a um placar único.
+- [x] Criar carteiras paralelas de moedas com unidade, total e escopo próprios, sem conversão automática entre elas.
+- [x] Inserir leitura matricial da trajetória por forma, moeda, estatuto, decisão e ruptura declarada.
+- [x] Permitir importar localmente uma atestação JSON e confrontar escopo, política, razão e divergências sem upload.
+- [x] Cobrir trajetórias, moedas paralelas e importação inválida ou divergente com cenários BDD.
+- [x] Validar a experiência inteiramente local e manter agentes, API keys, servidor, contas e publicação remota desativados.
+- [x] Modelar ramos de trajetória com origem, motivo e cabeça de razão de partida declarados.
+- [x] Criar relatório de divergências que compare política, razão, decisão, posto e escopo sem hierarquizar aplicadores.
+- [x] Implementar bifurcação de uma posição local sem reescrever a trajetória de origem.
+- [x] Criar histórico local opt-in que persista apenas dados permitidos e se mantenha vazio por padrão.
+- [x] Permitir apagar integralmente o histórico local e retirar o consentimento sem deixar rastros no navegador.
+- [x] Cobrir bifurcação, divergências, consentimento, persistência permitida e limpeza com cenários BDD.
+- [x] Modelar a leitura filtrada de uma trajetória por ramo sem ocultar a origem comum declarada.
+- [x] Permitir filtrar a matriz entre tronco e ramos, sem alterar a razão nem os registros persistidos.
+- [x] Exportar um relatório local de divergências com campos comparados e limites explícitos do confronto.
+- [x] Adicionar prazo de reexame e estados de vencimento sem reescrever a decisão ou o reexame original.
+- [x] Cobrir filtro, exportação, prazo pendente e prazo vencido com cenários BDD.
+- [x] Validar a experiência local e manter agentes, API keys, servidor, contas e publicação remota desativados.
+- [x] Modelar comentários de divergência por campo, com posição local, posição importada e data declarada.
+- [x] Exportar a trajetória filtrada com escopo, ramo e limites explícitos, sem modificar a razão original.
+- [x] Permitir anotar divergências e exportar seu relatório local sem absorver o pacote confrontado como prova.
+- [x] Arquivar um ramo por motivo e data, preservando origem, posições e possibilidade de leitura posterior.
+- [x] Impedir novas decisões em ramos arquivados sem apagar ou reescrever entradas existentes.
+- [x] Cobrir comentário, exportação e arquivamento com cenários BDD e validar o laboratório local.
+- [x] Reler integralmente o manuscrito para identificar conceitos, operações, limites e aplicações que pedem explicação visual.
+- [x] Elaborar plano editorial de uma página de infográficos didáticos, sem gerar ou publicar a rota nesta etapa.
+- [x] Modelar reabertura de ramo como novo ato datado, sem apagar o motivo de arquivamento nem as posições anteriores.
+- [x] Criar índice local de atestações geradas na sessão, sem persistência automática ou absorção de pacotes externos.
+- [x] Permitir filtrar divergências por campo, preservando todas as anotações e limites do confronto.
+- [x] Cobrir reabertura, índice e filtro com cenários BDD e validar a evolução local do laboratório.
+- [x] Definir `/info` como endereço previsto da página de infográficos, sem criar a rota.
+- [x] Inventariar todas as equações do manuscrito e verificar sua renderização no navegador.
+- [x] Criar a rota local `/cave` para reler a alegoria da caverna de Platão por forma, hospedeiro, moeda, troca, escala e refluxo.
+- [x] Validar a rota `/cave` em desktop e celular, sem publicação remota.
+- [x] Aprofundar `/cave` com um caderno de relações entre forma, suporte, consequência, contestação e retorno para cada uma das quatro cenas.
+- [x] Validar os novos gestos de leitura de `/cave` sem transformar a transposição em prova ou autoridade automática.
+- [x] Revisar os textos de interface para retirar fórmulas genéricas, repetições estruturais e tom promocional, preservando manuscrito, fontes e limites conceituais.
+- [x] Mapear no manuscrito a relação entre matéria, horizonte, tempo, manutenção e revisão.
+- [x] Criar a rota local `/cosmus` como fólio temporal do caderno, lápis e borracha.
+- [x] Validar a rota `/cosmus` em desktop e celular, sem publicação remota.
+- [x] Inventariar as representações visuais que usam blocos geométricos e classificar seus limites de abstração.
+- [x] Revisar diagramas e registros para distinguir forma, suporte, gesto, campo e temporalidade sem reduzir tudo a retângulos.
+- [x] Validar a revisão de representações em desktop e celular, sem publicação remota.
+- [x] Inventariar os diagramas do manuscrito e registrar o que cada figura mostra ou deixa fora do quadro.
+- [x] Acrescentar uma legenda editorial comum aos diagramas, sem modificar sua notação formal.
+- [x] Validar a leitura dos diagramas anotados em desktop e celular, sem publicação remota.
+- [x] Inventariar as tabelas do manuscrito e registrar o que suas colunas comparam ou deixam de fora.
+- [x] Acrescentar uma nota editorial de alcance às tabelas, sem transformar células em provas completas.
+- [x] Validar a leitura tabular anotada em desktop e celular, sem publicação remota.
+- [x] Definir uma chave gráfica comum para relações fechadas, suportes, campos, gestos e horizontes abertos.
+- [x] Integrar a chave visual às figuras de leitura sem modificar a notação formal do manuscrito.
+- [x] Validar a chave gráfica em desktop e celular, sem publicação remota.
+- [x] Construir os fólios 01–04 de `/info`: tipologia, hospedeiro e moeda, cadeia de estatutos e cláusula de identificação.
+- [x] Usar SVG e HTML determinísticos para os infográficos, mantendo números, relações e limites verificáveis.
+- [x] Integrar `/info` à navegação editorial sem alterar o manuscrito ou publicar remotamente.
+- [x] Validar os quatro fólios em desktop e celular, sem publicação remota.
+- [x] Construir os fólios 05–06 de `/info`: topologia navegável e sensibilidade das trajetórias sob convenções declaradas.
+- [x] Preservar os números 32, 36 e 43 como resultados de convenções distintas, sem torná-los placar ou prova do sistema.
+- [x] Validar os fólios 05–06 em desktop e celular, sem publicação remota.
+- [x] Construir os fólios 07–08 de `/info`: matriz dos seis casos e caderno de revisão.
+- [x] Preservar forma, moeda, posto e veredito como colunas distintas, sem fabricar avaliações ou validar casos externamente.
+- [x] Validar a sequência completa de oito fólios em desktop e celular, sem publicação remota.
+- [x] Inventariar figuras e tabelas do manuscrito com título, seção, função e limite de leitura.
+- [x] Criar um índice editorial de artefatos com remissões ao manuscrito e ao mapa visual.
+- [x] Validar o índice em desktop e celular, sem publicação remota.
+- [x] Mapear as inserções da chave de leitura e definir seus pontos legítimos de orientação.
+- [x] Remover as ocorrências redundantes da chave, preservando apenas as necessárias ao mapa visual e aos diagramas do manuscrito.
+- [x] Validar a correção de presença em desktop e celular, sem publicação remota.
+
+- [x] Confirmar o estado local e a origem do repositório antes do versionamento desta correção.
+- [x] Criar o commit da concentração da chave de leitura com as validações já concluídas.
+- [ ] Enviar o commit ao repositório Git remoto solicitado.

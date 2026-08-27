@@ -4,9 +4,13 @@
 import { isValidElement, useEffect, useMemo, useState, type ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowUpRight, Check, Copy, Download, Menu, MoveUpRight, X } from "lucide-react";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+import { ArrowUpRight, Check, Copy, Download, Menu, X } from "lucide-react";
 import manuscript from "@/content/gramatica-do-movimento.md?raw";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
+import { EditorialMark } from "@/components/EditorialMark";
 
 const bookPdfUrl = "https://raw.githubusercontent.com/0b3st4f3r4/gramatica/main/downloads/gramatica-do-movimento-livro.pdf";
 
@@ -15,16 +19,6 @@ type TocItem = {
   label: string;
   level: 2 | 3;
 };
-
-function EditorialMark({ className = "" }: { className?: string }) {
-  return (
-    <svg className={`editorial-mark ${className}`} viewBox="0 0 44 44" aria-hidden="true">
-      <circle cx="21" cy="22" r="11" fill="none" stroke="currentColor" strokeWidth="2.6" strokeDasharray="53 17" transform="rotate(-44 21 22)" />
-      <path d="M22 7v18.5c0 3.6 2.9 6.5 6.5 6.5H35" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2.6" />
-      <path d="m29.5 26 6 6-6 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.6" />
-    </svg>
-  );
-}
 
 function EditorialTrace({ className = "" }: { className?: string }) {
   return (
@@ -56,14 +50,113 @@ function textFromChildren(children: ReactNode): string {
   return "";
 }
 
+type TableScope = {
+  label: string;
+  relation: string;
+  outside: string;
+};
+
+function tableScope(children: ReactNode): TableScope {
+  const content = textFromChildren(children);
+
+  if (content.includes("Comportamento previsto")) {
+    return {
+      label: "TABELA 01 · TIPOLOGIA",
+      relation: "As colunas comparam comportamento previsto, manutenção e estatuto de cada família de forma.",
+      outside: "A matéria, a escala e o custo concreto de cada ocorrência seguem fora da grade e exigem descrição situada.",
+    };
+  }
+
+  if (content.includes("Hospedeiro") && content.includes("Mensurabilidade")) {
+    return {
+      label: "TABELA 02 · MOEDAS",
+      relation: "A tabela mantém separadas as moedas por hospedeiro, elemento sustentado e estatuto de mensurabilidade.",
+      outside: "A retirada observável, o proxy admitido e a conta paga por um caso não podem ser inferidos apenas da lista.",
+    };
+  }
+
+  if (content.includes("Símbolo") && content.includes("Estado epistemológico")) {
+    return {
+      label: "TABELA 03 · NÓS",
+      relation: "As linhas nomeiam posições do ciclo e os seus símbolos para leitura consistente da topologia.",
+      outside: "O gesto que ocupa uma posição, sua duração e seu suporte permanecem no registro da aplicação.",
+    };
+  }
+
+  if (content.includes("Operação") && content.includes("Transformação")) {
+    return {
+      label: "TABELA 04 · MOVIMENTOS",
+      relation: "A tabela diferencia operações pela transformação de um nó em outro e pelo comportamento previsto da passagem.",
+      outside: "Uma seta possível não comprova uma passagem ocorrida; data, material e custo pertencem ao caso que a declara.",
+    };
+  }
+
+  if (content.includes("Forma") && content.includes("Veredito") && content.includes("Caso")) {
+    return {
+      label: "TABELA 05 · APLICAÇÕES",
+      relation: "Os seis casos são comparados por forma, moeda, posto e veredito, sem reduzir essas colunas a uma medida comum.",
+      outside: "As evidências, divergências e pagamentos de cada caso continuam nos trechos de aplicação e não se somam na tabela.",
+    };
+  }
+
+  if (content.includes("Categoria") && content.includes("Consequência")) {
+    return {
+      label: "TABELA 06 · VAZAMENTOS",
+      relation: "As linhas distinguem classes de vazamento e consequências para o estatuto de uma derivação.",
+      outside: "O veredito exige razão datada, campo de contestação e caso identificado; a classe não resolve sozinha uma disputa.",
+    };
+  }
+
+  if (content.includes("Tronco") && content.includes("Trajetória")) {
+    return {
+      label: "TABELA 07 · TRAJETÓRIAS",
+      relation: "A enumeração agrupa as trinta e duas trajetórias admitidas pela topologia plena segundo seu tronco.",
+      outside: "A tabela oferece espaço de possibilidades; não registra qual trajetória um caso real percorreu nem como foi custeada.",
+    };
+  }
+
+  if (content.includes("de \\ para") && content.includes("a") && content.includes("c")) {
+    return {
+      label: "TABELA 08 · ADJACÊNCIA",
+      relation: "A matriz mostra quais passagens de avanço e ciclo são admitidas entre os dez nós do grafo.",
+      outside: "A adjacência não decide tempo, materialidade, recorrência ou validade de uma passagem realizada no mundo.",
+    };
+  }
+
+  return {
+    label: "TABELA · RECORTE COMPARATIVO",
+    relation: "A grade organiza diferenças por colunas para tornar a comparação explícita.",
+    outside: "As condições que fazem uma linha valer permanecem declaradas no texto, no caso e no registro correspondente.",
+  };
+}
+
+function ManuscriptTable({ children }: { children: ReactNode }) {
+  const scope = tableScope(children);
+
+  return (
+    <div className="table-scroll">
+      <div className="table-register-label">{scope.label}</div>
+      <table>{children}</table>
+      <div className="table-scope" role="note">
+        <p>{scope.relation}</p>
+        <p><strong>FORA DA GRADE.</strong> {scope.outside}</p>
+      </div>
+    </div>
+  );
+}
+
 function Heading({ level, children }: { level: 2 | 3; children: ReactNode }) {
   const label = textFromChildren(children);
   const id = slugify(label);
   const Tag = level === 2 ? "h2" : "h3";
+  const sectionNumber = label.match(/^(\d+)/)?.[1];
+  const sectionMeta = sectionNumber ? `SEÇÃO ${sectionNumber}` : "ABERTURA";
 
   return (
     <Tag id={id} className={`manuscript-heading heading-${level}`}>
       <a href={`#${id}`} className="heading-anchor" aria-label={`Link para ${label}`}>
+        {level === 2 && <span className="heading-meta" aria-hidden="true">{sectionMeta}</span>}
+        {level === 2 && <EditorialMark className="heading-mark" aria-hidden="true" />}
         {children}
         <span aria-hidden="true">#</span>
       </a>
@@ -97,6 +190,7 @@ export default function Home() {
       })),
     [],
   );
+  const activeLabel = toc.find((item) => item.id === activeId)?.label ?? "RESUMO";
 
   useEffect(() => {
     const headings = toc
@@ -159,11 +253,7 @@ export default function Home() {
           </pre>
         );
       },
-      table: ({ children }) => (
-        <div className="table-scroll">
-          <table>{children}</table>
-        </div>
-      ),
+      table: ({ children }) => <ManuscriptTable>{children}</ManuscriptTable>,
       blockquote: ({ children }) => <blockquote className="essay-quote">{children}</blockquote>,
       a: ({ href, children }) => (
         <a href={href} target={href?.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
@@ -202,8 +292,15 @@ export default function Home() {
             <span>GRAMÁTICA<br />DO MOVIMENTO</span>
           </a>
           <div className="rail-edition"><span>EDIÇÃO CRÍTICA</span><strong>2026</strong></div>
+          <div className="rail-document"><span>DOCUMENTO 01</span><span>LEITURA · WEB</span></div>
           <p className="rail-kicker">Caderno de leitura</p>
           <p className="rail-description">Uma gramática filosófica do movimento.</p>
+          <div className="rail-position"><span>POSIÇÃO EM CURSO</span><strong>{activeLabel}</strong></div>
+          <div className="rail-instrument" aria-label="Aparelho de leitura">
+            <span>FÓLIO 01</span>
+            <i aria-hidden="true" />
+            <strong>{Math.round(progress)}%</strong>
+          </div>
         </div>
 
         <nav className="toc" aria-label="Índice do manuscrito">
@@ -223,7 +320,7 @@ export default function Home() {
         </nav>
 
         <div className="rail-bottom">
-          <div className="progress-copy"><span>Leitura</span><strong>{Math.round(progress)}%</strong></div>
+          <div className="progress-copy"><span>PROGRESSO DE LEITURA</span><strong>{Math.round(progress)}%</strong></div>
           <div className="progress-track"><span style={{ width: `${progress}%` }} /></div>
           <a className="source-link" href="#referencias" onClick={() => setMenuOpen(false)}>
             Referências <ArrowUpRight size={13} />
@@ -236,13 +333,17 @@ export default function Home() {
       <main className="reading-stage">
         <section id="inicio" className="opening" aria-labelledby="page-title">
           <div className="opening-copy">
-            <p className="eyebrow"><MoveUpRight size={15} /> EDIÇÃO DIGITAL · 2026</p>
+            <p className="eyebrow"><EditorialMark className="opening-mark" /> EDIÇÃO DIGITAL · 2026</p>
             <div className="opening-folio"><span>01</span><i aria-hidden="true" /><span>CADERNO DE MARGEM</span></div>
             <h1 id="page-title">Gramática<br />do Movimento</h1>
             <p className="opening-deck">Um sistema de leitura para declarar aquilo que flui, aquilo que persiste e aquilo que se paga para sustentar uma forma.</p>
             <ReadingMeta />
             <div className="opening-actions">
               <a className="primary-link" href="#resumo">Começar a leitura <ArrowUpRight size={16} /></a>
+              <a className="lab-link" href="/info">Mapa visual da teoria <ArrowUpRight size={15} /></a>
+              <a className="lab-link" href="/lab">Laboratório de movimentos <ArrowUpRight size={15} /></a>
+              <a className="lab-link" href="/cave">Leitura da caverna <ArrowUpRight size={15} /></a>
+              <a className="lab-link" href="/cosmus">Fólio do tempo <ArrowUpRight size={15} /></a>
               <a className="pdf-link" href={bookPdfUrl} target="_blank" rel="noreferrer">
                 <Download size={15} /> Baixar livro em PDF
               </a>
@@ -264,7 +365,7 @@ export default function Home() {
         </section>
 
         <article className="manuscript" aria-label="Manuscrito Gramática do Movimento">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+          <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
             {content}
           </ReactMarkdown>
         </article>
@@ -273,9 +374,12 @@ export default function Home() {
           <EditorialTrace className="closing-trace" />
           <div>
             <span>EDIÇÃO ESTÁTICA</span>
-            <p>O texto permanece aberto à revisão; a página preserva sua estrutura, seus diagramas e sua navegabilidade.</p>
+            <p>Texto, estrutura, diagramas e navegação permanecem disponíveis para revisão.</p>
           </div>
-          <a href="#inicio">Voltar ao início <ArrowUpRight size={15} /></a>
+          <div className="closing-actions">
+            <a href="/laboratorio">Abrir laboratório <ArrowUpRight size={15} /></a>
+            <a href="#inicio">Voltar ao início <ArrowUpRight size={15} /></a>
+          </div>
         </footer>
       </main>
     </div>

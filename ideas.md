@@ -73,3 +73,45 @@ O wordmark usa uma composição serrifada curta, **GRAMÁTICA / DO MOVIMENTO**, 
 - O azul-petróleo é reservado a sinais de orientação: fluxo, seção ativa, âncoras, filetes, headings e estados de navegação.
 - O wordmark permanece uma composição editorial — **GRAMÁTICA / DO MOVIMENTO** — sempre acompanhada pela marca de loop e seta.
 - Diagramas, tabelas e notas compartilham superfícies de papel claro, regras precisas e rótulos sans-serif discretos.
+- A margem da edição é um contínuo visual, e não somente uma barra lateral: a linha de fluxo, a marca, os metadados, o índice e o progresso devem parecer partes da mesma peça editorial.
+- A rota do laboratório é uma segunda modalidade da mesma publicação; nela, a marca de recorte substitui ícones genéricos nas posições de maior hierarquia.
+- A densidade do manuscrito pode ser maior, mas ambas as rotas preservam papel claro, filetes azul-petróleo, rótulos em caixa alta, serifa de leitura e tom sóbrio.
+- O laboratório é um instrumento editorial: controles aparecem como evidência regrada e superfícies anotadas, não como cartões de produto.
+- A marca de recorte ocupa os momentos de maior hierarquia no laboratório — abertura de sessão, aplicação de regra, decisão e atestação — enquanto ícones utilitários permanecem auxiliares.
+- O azul-petróleo atua como sinal de método: filetes, orientação, estado ativo, decisão e ação primária; preenchimentos secundários mantêm-se quase neutros.
+- As oportunidades do laboratório são apresentadas como um registro de meios — prova, transformação, endereço, custo, tempo e contestação — e não como uma lista de funcionalidades promocionais.
+- Os capítulos do manuscrito começam como marcos de edição: metadado sans-serif, regra azul-petróleo e título serifado antecedem o corpo mais denso.
+- A espinha de leitura deve enunciar sua posição presente na margem, para que marca, índice, progresso e seção ativa apareçam como uma única aparelhagem editorial.
+- No laboratório, os casos de uso mantêm a forma de registros: número, caso, evidência e efeito esperado organizados por filetes, sem cartões autônomos.
+- O aparelho de margem do laboratório é contínuo: selo, filete, posições de caso, prova, regra e razão formam uma única espinha de orientação ao longo do caderno.
+- A marca de recorte substitui ícones genéricos nos atos de declarar evidência, aplicar política, confrontar atestação e exportar o caderno; ícones persistem apenas em utilidades secundárias.
+- Campos de política, evidência, custo, decisão, reexame e trajetória devem parecer registros anotados de uma edição crítica, governados por faixas, filetes e rótulos funcionais.
+- Na rota do laboratório, a espinha fixa reúne marca, posição e atalhos de seção; ela orienta a leitura sem disputar espaço com o caderno nem aparecer no celular.
+- As grandes seções repetem uma cadência editorial: filete de método, metadado, afirmação serifada e coluna explicativa; o percurso deve parecer uma única publicação, não painéis independentes.
+- Dentro do caderno, os atos operativos obedecem a fólios sequenciais — declaração, prova, envelope, separação, decisão e reexame — ligados ao mesmo filete de método; controles são subordinados a esses registros.
+- A marca de recorte aparece em escala ampliada nos atos de abertura e nos marcos de alta consequência — declaração, decisão, exportação e atestação —, enquanto a tipografia e os rótulos preservam a hierarquia de leitura.
+- A espinha do laboratório reúne, em uma só peça, marca de recorte, posição em curso, atalhos de seção, régua de progresso e filete; uma linha isolada não constitui aparelho de margem.
+- Controles da prática assumem a aparência de fólios anotados de uma edição crítica — sequenciados, rotulados e regrados — e jamais a de campos soltos ou cartões de produto.
+- O masthead **GRAMÁTICA / DO MOVIMENTO** funciona como identidade de publicação e a marca de recorte cresce nos atos de abertura, declaração, decisão, exportação e atestação.
+- A rota `/cave` lê a alegoria como caderno de transposição: a cena primária aparece por camadas de sombra, suporte, virada e retorno; cada camada devolve uma pergunta da Gramática e declara o limite da analogia.
+- O diagrama da caverna permanece determinístico em SVG editorial, com figuras abstratas, alto contraste e rótulos no DOM; o azul-petróleo orienta a passagem, mas não converte luz, dor ou retorno em sinal automático de verdade.
+- Na rota `/cave`, a margem nomeia a camada em curso — sombra, suporte, virada ou retorno — e liga marca, filete, régua de progresso e índice de fólio numa única espinha de transposição.
+- A marca de recorte ganha escala nos atos de abertura, limite, transposição e retorno; os quatro estados da alegoria são fólios sequenciais e anotados, não abas de produto.
+- Todas as rotas exibem a margem como aparelho completo: marca de recorte, wordmark ou título de rota, posição presente, índice ou régua de progresso e filete azul-petróleo pertencem à mesma peça editorial.
+- Capítulos do manuscrito funcionam como limiares de fólio: marca de recorte, metadado em caixa alta, regra azul-petróleo, título serifado e pausa de papel antecedem a leitura densa.
+- Diagramas, tabelas e registros mantêm superfícies próximas ao papel, filetes e rótulos de edição crítica; grandes lavagens de azul-petróleo não substituem a hierarquia tipográfica.
+- A rota `/cosmus` organiza matéria, horizonte e tempo como um fólio temporal: caderno, lápis e borracha aparecem em SVG determinístico e em três posições de leitura, sem reduzir revisão a apagamento.
+- O azul-petróleo fixa a linha temporal, a margem e o fólio em curso; um tom de grafite quente pertence apenas ao gesto material do lápis e da borracha.
+- Figuras fechadas organizam relações comparáveis — posição, sequência, bifurcação e registro. Traço aberto, borda irregular, arco e linha interrompida indicam suporte, gesto, campo, custo, horizonte e revisão, que excedem a figura.
+- A rota principal é a expressão mais completa da edição: sua margem reúne marca de recorte, masthead, posição, índice, progresso e filete como um único aparelho antes da leitura contínua.
+- Cada capítulo do manuscrito abre como fólio com marca, metadado, regra azul-petróleo, título serifado e pausa de papel. Os controles do laboratório mantêm bordas de registro, círculos de posição e sequência, em vez de superfícies de produto.
+- As leituras derivadas conservam a espinha da edição, mas cada uma possui uma modalidade própria: a caverna reaparece por sombra, suporte, virada e retorno; o fólio temporal por matéria, horizonte, inscrição e correção. A marca de recorte orienta essas passagens, sem funcionar como ornamento.
+- A rota `/info` é um caderno de orientação, não uma parede de pôsteres: cada fólio combina pergunta, estrutura determinística, legenda de alcance e remissão exata ao manuscrito.
+- Tipologia, hospedeiro, estatuto e cláusula usam geometrias próprias — linha de propagação, circuito, escada e janela — sem converter seu desenho em prova; a margem fixa mantém o fólio em curso e sua família de leitura.
+- Em `/info`, a margem nomeia sempre o fólio e sua família, ligando marca, índice, régua e filete; as quatro entradas se apresentam como registros anotados de pergunta, recorte e limite, e não como controles de produto.
+- Nos pontos de orientação, limite e retorno ao manuscrito, a marca de recorte substitui ícones genéricos. Ícones utilitários ficam restritos aos vínculos secundários.
+- Os fólios 05–06 de `/info` conservam a distinção entre grafo e convenção: os dez nós e as arestas declaradas usam uma topologia de pontos e linhas; 32, 36 e 43 aparecem como três cadernos de contagem, sem barras de desempenho, medidores ou placar.
+- A rota `/info` repete a cadência de um caderno encadernado: a margem anuncia fólio em leitura, família e régua; cada entrada conserva número, pergunta, recorte e limite antes da prancha aberta. O masthead tem presença de publicação, não de barra utilitária.
+- Em `/info`, uma ficha de fólio no corpo repete o aparelho de margem para que posição, família, régua e marca permaneçam presentes mesmo quando a margem fixa se recolhe. As oito entradas formam registros em duas colunas; os vínculos finais se leem como remissões de caderno, não como um hub de navegação.
+- A abertura de `/info` também porta o selo de publicação e uma régua de oito posições; linha, circuito, escada, janela, grafo, caderno, matriz e revisão aparecem como famílias nomeadas das pranchas, nunca como ilustrações intercambiáveis.
+- Os fólios 07–08 terminam o mapa pela matéria dos casos e pela revisão: a matriz conserva linhas e colunas para comparações declaradas; o caderno de vereditos usa entradas datadas e cadeia de postos, sem árvore de decisão, nota de desempenho ou validação exterior.
