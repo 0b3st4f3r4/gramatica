@@ -138,3 +138,8 @@
 - [x] Confirmar o estado local e a origem do repositório antes do versionamento desta correção.
 - [x] Criar o commit da concentração da chave de leitura com as validações já concluídas.
 - [x] Enviar o commit ao repositório Git remoto solicitado.
+
+- [x] Diagnosticar os 404 de rotas diretas na edição estática publicada.
+- [x] Implementar e validar um fallback estático para `/lab`, `/cave`, `/cosmus` e `/info`.
+- [x] Versionar e enviar a correção de navegação sem alterar o conteúdo editorial.
+- [x] Confirmar no GitHub o commit da correção de fallback de rotas.
