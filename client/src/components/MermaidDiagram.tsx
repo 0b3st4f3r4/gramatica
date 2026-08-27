@@ -1,7 +1,7 @@
 /**
  * Caderno de Margem: renderer de diagrama estrutural, discreto e legível em fundo branco.
  */
-import { useEffect, useId, useState } from "react";
+import { memo, useEffect, useId, useState } from "react";
 
 type MermaidApi = typeof import("mermaid").default;
 
@@ -10,6 +10,7 @@ type MermaidDiagramProps = {
 };
 
 let mermaidConfigured = false;
+const renderedSvgCache = new Map<string, string>();
 
 function configureMermaid(mermaid: MermaidApi) {
   if (mermaidConfigured) return;
@@ -37,10 +38,10 @@ function configureMermaid(mermaid: MermaidApi) {
   mermaidConfigured = true;
 }
 
-export function MermaidDiagram({ chart }: MermaidDiagramProps) {
+function MermaidDiagramComponent({ chart }: MermaidDiagramProps) {
   const rawId = useId();
   const diagramId = `diagrama-${rawId.replace(/[^a-zA-Z0-9_-]/g, "")}`;
-  const [svg, setSvg] = useState("");
+  const [svg, setSvg] = useState(() => renderedSvgCache.get(chart) ?? "");
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -48,9 +49,19 @@ export function MermaidDiagram({ chart }: MermaidDiagramProps) {
 
     async function renderChart() {
       try {
+        const cachedSvg = renderedSvgCache.get(chart);
+        if (cachedSvg) {
+          if (!cancelled) {
+            setSvg(cachedSvg);
+            setError(false);
+          }
+          return;
+        }
+
         const { default: mermaid } = await import("mermaid");
         configureMermaid(mermaid);
         const result = await mermaid.render(diagramId, chart);
+        renderedSvgCache.set(chart, result.svg);
         if (!cancelled) {
           setSvg(result.svg);
           setError(false);
@@ -81,3 +92,8 @@ export function MermaidDiagram({ chart }: MermaidDiagramProps) {
     </figure>
   );
 }
+
+export const MermaidDiagram = memo(
+  MermaidDiagramComponent,
+  (previous, next) => previous.chart === next.chart,
+);

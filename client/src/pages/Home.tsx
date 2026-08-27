@@ -142,34 +142,37 @@ export default function Home() {
     }
   }
 
-  const markdownComponents: Components = {
-    h1: ({ children }) => <Heading level={2}>{children}</Heading>,
-    h2: ({ children }) => <Heading level={2}>{children}</Heading>,
-    h3: ({ children }) => <Heading level={3}>{children}</Heading>,
-    pre: ({ children }) => <>{children}</>,
-    code: ({ className, children }) => {
-      const language = /language-(\w+)/.exec(className || "")?.[1];
-      const value = String(children).replace(/\n$/, "");
-      if (language === "mermaid") return <MermaidDiagram chart={value} />;
-      if (!language) return <code className="inline-code">{children}</code>;
-      return (
-        <pre className="code-block">
-          <code className={className}>{children}</code>
-        </pre>
-      );
-    },
-    table: ({ children }) => (
-      <div className="table-scroll">
-        <table>{children}</table>
-      </div>
-    ),
-    blockquote: ({ children }) => <blockquote className="essay-quote">{children}</blockquote>,
-    a: ({ href, children }) => (
-      <a href={href} target={href?.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-        {children}
-      </a>
-    ),
-  };
+  const markdownComponents = useMemo<Components>(
+    () => ({
+      h1: ({ children }) => <Heading level={2}>{children}</Heading>,
+      h2: ({ children }) => <Heading level={2}>{children}</Heading>,
+      h3: ({ children }) => <Heading level={3}>{children}</Heading>,
+      pre: ({ children }) => <>{children}</>,
+      code: ({ className, children }) => {
+        const language = /language-(\w+)/.exec(className || "")?.[1];
+        const value = String(children).replace(/\n$/, "");
+        if (language === "mermaid") return <MermaidDiagram chart={value} />;
+        if (!language) return <code className="inline-code">{children}</code>;
+        return (
+          <pre className="code-block">
+            <code className={className}>{children}</code>
+          </pre>
+        );
+      },
+      table: ({ children }) => (
+        <div className="table-scroll">
+          <table>{children}</table>
+        </div>
+      ),
+      blockquote: ({ children }) => <blockquote className="essay-quote">{children}</blockquote>,
+      a: ({ href, children }) => (
+        <a href={href} target={href?.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+          {children}
+        </a>
+      ),
+    }),
+    [],
+  );
 
   return (
     <div className="editorial-shell">
