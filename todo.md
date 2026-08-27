@@ -137,4 +137,4 @@
 
 - [x] Confirmar o estado local e a origem do repositório antes do versionamento desta correção.
 - [x] Criar o commit da concentração da chave de leitura com as validações já concluídas.
-- [ ] Enviar o commit ao repositório Git remoto solicitado.
+- [x] Enviar o commit ao repositório Git remoto solicitado.
